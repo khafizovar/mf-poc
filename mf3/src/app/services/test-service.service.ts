@@ -12,12 +12,8 @@ export class TestServiceService {
   private serverUrl = "http://localhost:3004";
 
   constructor(private http: HttpClient) { }
-  // constructor() { }
 
   public getProducts(): Observable<Array<Product>> {
     return this.http.get<Product[]>(this.serverUrl + '/products/');
   }
-  // public getProducts(): [] {
-  //   return [];
-  // }
 }

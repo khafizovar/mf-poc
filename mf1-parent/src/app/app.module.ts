@@ -7,6 +7,7 @@ import { SecondRouteComponentComponent } from './second-route-component/second-r
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ServerRouteInterceptor} from "./interpseptor/inteseptor";
+import {ListboxModule} from "primeng/listbox";
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import {ServerRouteInterceptor} from "./interpseptor/inteseptor";
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ListboxModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: ServerRouteInterceptor,
-    multi: true
+    multi: true,
   }],
   bootstrap: [AppComponent]
 })

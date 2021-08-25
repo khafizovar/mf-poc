@@ -1,5 +1,11 @@
-<h1>Microfrontend shell</h1>
-<a routerLink="/lazyGtmModule"><button>lazyGtmModule</button></a>
-<a routerLink="/child2"><button>lazyAModule</button></a>
-<a routerLink="/second"><button>localModule</button></a>
-<router-outlet></router-outlet>
+<!--<h1>Microfrontend shell</h1>-->
+<!--<a routerLink="/lazyGtmModule"><button>lazyGtmModule</button></a>-->
+<!--<a routerLink="/child2"><button>lazyAModule</button></a>-->
+<!--<a routerLink="/second"><button>localModule</button></a>-->
+<!--<textarea [value]="logText" style="width: 100%; height: 300px;"></textarea>-->
+<div class="pos-abs menu">
+  <p-listbox [options]="routes" (onChange)="routeTo($event)" optionLabel="name"></p-listbox>
+</div>
+<div class="pos-abs content">
+  <router-outlet></router-outlet>
+</div>

@@ -14,36 +14,39 @@ import {HttpClientModule} from "@angular/common/http";
 //   head.appendChild(link);
 // }
 
-const routes: Routes = [{
-  path: 'lazyGtmModule',
-  loadChildren: () =>
-    loadRemoteModule({
-      remoteEntry: 'http://localhost:3004/remoteEntry.js',
-      remoteName: 'mf3',
-      exposedModule: './lazyGtmModule'
-    }).then(m => m.GtmPartModuleRoutingModule)
-      .catch(error => {
-        console.error(error);
-      })
-},
-  {
-    path: 'child2',
-    loadChildren: () =>
-      loadRemoteModule({
-        remoteEntry: 'http://localhost:3004/remoteEntry.js',
-        remoteName: 'mf3',
-        exposedModule: './m2'
-      }).then(m => m.ModuleaRoutingModule)
-        .catch(error => {
-          console.error(error);
-        })
-  },
-  {
-    path: 'second', component: SecondRouteComponentComponent,
-  }];
+const routes: Routes = [
+//   {
+//   path: 'lazyGtmModule',
+//   loadChildren: () =>
+//     loadRemoteModule({
+//       remoteEntry: 'http://localhost:3004/remoteEntry.js',
+//       remoteName: 'mf3',
+//       exposedModule: './lazyGtmModule'
+//     }).then(m => m.GtmPartModuleRoutingModule)
+//       .catch(error => {
+//         console.error(error);
+//       })
+// },
+//   {
+//     path: 'child2',
+//     loadChildren: () =>
+//       loadRemoteModule({
+//         remoteEntry: 'http://localhost:3004/remoteEntry.js',
+//         remoteName: 'shell-roleright-mf',
+//         exposedModule: './m2'
+//       }).then(m => m.ModuleaRoutingModule)
+//         .catch(error => {
+//           console.error(error);
+//         })
+//   },
+//   {
+//     path: 'second', component: SecondRouteComponentComponent,
+//   }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  // imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot([], { initialNavigation: undefined, useHash: true})],
   exports: [RouterModule],
   providers: [HttpClientModule]
 })
