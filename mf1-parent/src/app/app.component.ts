@@ -25,7 +25,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.log("Попытка авторизации...");
-    this.commonService.auth("admin", "Qwerty123").then(value => {
+    this.commonService.auth("admin", "admin").then(value => {
       this.log("Авторизация успешна: \n" + JSON.stringify(value));
       this.log("Запрашиваем список роутов...");
       this.commonService.getRoutes().then(value1 => {
